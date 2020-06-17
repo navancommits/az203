@@ -6,10 +6,10 @@
             "value": "westus"
         },
         "networkInterfaceName": {
-            "value": "mynewvm20200617"
+            "value": "mytestvm20200617"
         },
         "networkSecurityGroupName": {
-            "value": "mynewvm20200617-nsg"
+            "value": "mytestvm20200617-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -45,7 +45,7 @@
             "value": "default"
         },
         "virtualNetworkName": {
-            "value": "mynewrg20200617-vnet"
+            "value": "mytestrg20200617-vnet"
         },
         "addressPrefixes": {
             "value": [
@@ -63,7 +63,7 @@
             ]
         },
         "publicIpAddressName": {
-            "value": "mynewvm20200617-ip"
+            "value": "mytestvm20200617-ip"
         },
         "publicIpAddressType": {
             "value": "Dynamic"
@@ -72,13 +72,13 @@
             "value": "Basic"
         },
         "virtualMachineName": {
-            "value": "mynewvm20200617"
+            "value": "tesvm20200617"
         },
         "virtualMachineComputerName": {
-            "value": "mynewvm20200617"
+            "value": "tesvm20200617"
         },
         "virtualMachineRG": {
-            "value": "mynewrg20200617"
+            "value": "testresgrp20200617"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -93,7 +93,7 @@
             "value": "N@van1234567"
         },
         "diagnosticsStorageAccountName": {
-            "value": "mynewrg20200617diag"
+            "value": "mytestrg20200617diag"
         },
         "diagnosticsStorageAccountId": {
             "value": "Microsoft.Storage/storageAccounts/mynewrg20200617diag"
