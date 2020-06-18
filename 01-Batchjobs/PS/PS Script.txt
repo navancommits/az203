@@ -1,0 +1,15 @@
+$context=Get-AzBatchAccountKeys -AccountName testbatchac20200617
+
+$vmImage = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSImageReference" -ArgumentList @("UbuntuServer", "Canonical", "18.04-LTS")
+$vmConfig = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSVirtualMachineConfiguration" -ArgumentList @($vmImage, "batch.node.ubuntu 18.04")
+New-AzureBatchPool -Id "NewTestPool20200617" -VirtualMachineSize "Standard_a1" -VirtualMachineConfiguration $vmConfig -AutoScaleFormula '$TargetDedicated=4;' -BatchContext $context
+
+$poolInformation=New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSPoolInformation" 
+$poolInformation.PoolID="NewTestPool20200617"
+New-AzBatchJob -Id "NewTestJob20200617" -PoolInformation $poolInformation -BatchContext $context
+
+$context=Get-AzBatchAccountKeys -AccountName testbatchac20200617
+$Task01 = New-Object Microsoft.Azure.Commands.Batch.Models.PSCloudTask("NewTestTask20200617-1$_", "uname -a")
+$Task02 = New-Object Microsoft.Azure.Commands.Batch.Models.PSCloudTask("NewTestTask20200617-2$_", "uname -a")
+New-AzBatchTask -JobId "NewTestJob20200617" -Tasks @($Task01, $Task02) -BatchContext $Context
+
